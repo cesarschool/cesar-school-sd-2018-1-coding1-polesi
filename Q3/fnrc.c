@@ -8,23 +8,40 @@
  * - length: tamanho do array - número de caracteres
  * Output: A primeira letra que não se repete, ou -1, caso todas se repitam.
  */
-char firstNonRepeatingChar (char sentence[], int length)
-{
-    printf("\nfirstNonRepeatingChar::START: %s, %d\n", s, length);
-    
-    // TODO: YOUR CODE HERE!
-    
-    printf("\nfirstNonRepeatingChar::END\n");
-    return -1;
+#include <stdio.h>
+ 
+int contarLetra(char frase[], char letra)
+   {
+   int c = 0, count = 0;
+
+   while (frase[c] != '\0') {
+
+      if (frase[c] == letra) {
+        count++;
+      }
+ 
+      c++;
+   }
+ 
+   return count;
 }
 
-int main()
-{
-    printf("\n### CESAR School :: Sistemas Digitais :: Coding1 :: firstNonRepeatingChar ###\n");
-    
-    firstNonRepeatingChar("ovo", 3);
-    firstNonRepeatingChar("cesar school", 12);
-    firstNonRepeatingChar("sistemas digitais", 17);
-    
-    return 0;
+int main (void)
+    {
+    char frase[100];
+    int c= 0;
+    printf("Digite uma palavra: ");
+    scanf("%s",&frase);
+
+      while (frase[c] != '\0') {
+          
+      if (contarLetra(frase,frase[c]) == 1) {
+      printf("%c é a primeira letra única", frase[c]);
+          break;
+      }
+      
+      c++;
+      
+   }
 }
+        

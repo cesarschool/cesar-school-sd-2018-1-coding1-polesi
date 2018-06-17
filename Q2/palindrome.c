@@ -11,27 +11,44 @@
  * Output: true se a sentença é um palídromo, falso caso negativo.
  */
 
-bool isPalindrome (char sentence[], int length) {
-    printf("\nisPalindrome::START: %s, %d\n", sentence, length);
-
-    // TODO: YOUR CODE HERE!
-    
-    printf("\nisPalindrome::END\n");
-    return false;
-}
-
-int main()
+//Função que checa se a string é um palíndromo
+int isPalindrome (char sentence[], int length)
 {
-    printf("\n### CESAR School :: Sistemas Digitais :: Coding1 :: Palindrome ###\n");
-    
-    // true cases
-    isPalindrome("ovo", 3);
-    isPalindrome("arara", 5);
-
-    // false cases
-    isPalindrome("cesar", 5);
-    isPalindrome("school", 6);
-
-    return 0;
+    //Começa dos extremos da palavra
+    int l = 0;
+    int h= length - 1;
+ 
+    // Continua comparando enquanto eles são iguais
+    while (h > l)
+    {
+        if (sentence[l++] != sentence[h--])
+        {
+            return  0;
+        }
+    }
+            return  1;
 }
+
+
+int main(void)
+{
+    char sentence[100];
+	int c = 0, length = 0;
+    printf("Digite uma palavra: ");
+    scanf("%s",&sentence);
+	
+while (sentence[c++] != '\0') length++;
+
+if (isPalindrome(sentence,length)) {
+  printf("True");
+}
+else {
+  printf("False");
+}
+}
+
+
+
+
+
  
